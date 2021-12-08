@@ -1,15 +1,29 @@
-<p>
-    <a href="{% url 'MainApp:index' %}">Learning Log</a>
-    <a href="{% url 'MainApp:topics' %}">Topics</a>
-    {% if user.is_authenticated %}
-    Hello, {{user.username}}
-    <a href="{% url 'users:logout' %}">Log out</a>
-    {% else %}<a href="{% url 'users:register' %}">Register</a>"
-    <a href="{% url 'users:login' %}">Log in</a>"
-    {% endif %}
+{% load bootstrap4 %}
 
-</p>
+<!doctype html>
+<html lang="en">
 
-{% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+        shrink-to-fit=no">
+    <title>Learning Log</title>
 
-{% endblock content %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
+        <a class="navbar-brand" href="{% url 'MainApp:index'%}">
+            Learning Log</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class"nav-item">
+                    <a class="nav-link" href="{% url 'MainApp:topics'%}" Topics</Li>
+            </ul>
