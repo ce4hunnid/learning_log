@@ -1,13 +1,11 @@
 {% extends "MainApp/base.html" %}
-
-{% block content %}
 {% load bootstrap4 %} 
 
 {% block page_header %} 
     <h2>Log in to your account.</h2>
 {% endblock page_header %} 
 
-
+{% block content %} 
     <form method="post" action="{% url 'users:login' %}" class="form">
         {% csrf_token %} 
         {% bootstrap_form form %} 
