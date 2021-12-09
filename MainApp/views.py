@@ -25,7 +25,7 @@ def topic(request,topic_id):
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic':topic, 'entries':entries}
 
-    return render(request, 'MainApp/topic.html',context)
+    return render(request, 'MainApp/topics.html',context)
 @login_required
 def new_topic(request):
     if request.method != 'POST':
